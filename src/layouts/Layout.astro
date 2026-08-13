@@ -1,0 +1,62 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Servicio profesional de limpieza - Limpio Aroma. Limpieza residencial y comercial de alta calidad." />
+    <link rel="icon" type="image/jpeg" href="/imagenes/Logo.jpeg" />
+    <link rel="apple-touch-icon" href="/imagenes/Logo.jpeg" />
+    <link rel="shortcut icon" href="/imagenes/Logo.jpeg" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --azul-primario: #1a5276;
+    --azul-claro: #2e86c1;
+    --verde-primario: #1e8449;
+    --verde-claro: #27ae60;
+    --blanco: #ffffff;
+    --gris-claro: #f8f9fa;
+    --texto: #2c3e50;
+    --gradiente: linear-gradient(135deg, var(--azul-primario), var(--verde-primario));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--texto);
+    line-height: 1.6;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  ul {
+    list-style: none;
+  }
+</style>
